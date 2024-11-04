@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/document")
+@RequestMapping("/api/v1/documents")
 public class DocumentController {
 
     private DocumentService documentService;
@@ -38,4 +38,28 @@ public class DocumentController {
         // Повертаємо новостворений документ разом зі статусом 201 Created
         return new ResponseEntity<>(createdDocument, HttpStatus.CREATED);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Document> updateDocument(@PathVariable int id, @RequestBody Document document) {
+        // Переконуємося, що ID документа відповідає ID в шляху
+        if (document.getId() != id) {
+            return ResponseEntity.badRequest().build();
+        }
+        try {
+            Document updatedDocument = documentService.update(document);
+            return ResponseEntity.ok(updatedDocument);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteDocument(@PathVariable int id) {
+        if (documentService.getById(id).isPresent()) {
+            documentService.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

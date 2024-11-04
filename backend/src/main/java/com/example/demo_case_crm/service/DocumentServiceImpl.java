@@ -30,4 +30,19 @@ public class DocumentServiceImpl implements DocumentService{
     public Optional<Document> getById(int id) {
         return documentRepository.findById(id);
     }
+
+    @Override
+    public Document update(Document document) {
+        if (documentRepository.existsById(document.getId())) {
+            return documentRepository.save(document);
+        } else {
+            throw new IllegalArgumentException("Document with ID " + document.getId() + " not found");
+        }
+    }
+
+    @Override
+    public void deleteById(int id) {
+        documentRepository.deleteById(id);
+    }
+
 }

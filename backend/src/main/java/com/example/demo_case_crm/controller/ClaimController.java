@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/v1/claim")
+@RequestMapping("/api/v1/claims")
 public class ClaimController {
 
     private ClaimService claimService;

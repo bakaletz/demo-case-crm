@@ -11,4 +11,8 @@ public interface DocumentService {
     Document save(Document document);
 
     Optional<Document> getById(int id);
+
+    Document update(Document document);
+
+    void deleteById(int id);
 }
