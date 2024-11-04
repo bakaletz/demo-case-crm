@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/document")
@@ -22,6 +23,14 @@ public class DocumentController {
     public List<Document> getAll(){
         return documentService.getAll();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Document> getDocumentById(@PathVariable int id) {
+        Optional<Document> document = documentService.getById(id);
+        return document.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     public ResponseEntity<Document> createDocument(@RequestBody Document document) {
         Document createdDocument = documentService.save(document);
