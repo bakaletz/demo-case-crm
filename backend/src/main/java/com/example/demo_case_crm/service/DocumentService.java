@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface DocumentService {
     List<Document> getAll();
+
+    Document save(Document document);
 }
