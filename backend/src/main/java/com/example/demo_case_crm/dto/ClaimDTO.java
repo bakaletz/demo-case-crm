@@ -18,4 +18,5 @@ public class ClaimDTO {
     @NotEmpty(message = "Status is required")
     private String status;
     private UserDTO userDTO;
+    private ClientDTO clientDTO;
 }

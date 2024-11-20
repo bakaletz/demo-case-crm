@@ -22,4 +22,8 @@ public class Claim extends BaseEntity{
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
+    @JoinColumn(name = "client_id")
+    private Client client;
 }

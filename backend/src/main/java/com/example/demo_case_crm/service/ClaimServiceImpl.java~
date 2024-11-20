@@ -81,7 +81,6 @@ public class ClaimServiceImpl implements ClaimService {
             claim.setUser(user);
 
         }
-
         if(claimDTO.getClientDTO() != null) {
         int clientId = claimDTO.getClientDTO().getId();;
         Client client = clientRepository.findById(clientId)
@@ -110,15 +109,6 @@ public class ClaimServiceImpl implements ClaimService {
                 UserMapper.toEntity(userDTO, user);
                  claim.setUser(user);
         }
-        if(claimDTO.getClientDTO() != null) {
-            int clientId = claimDTO.getClientDTO().getId();;
-            Client client = clientRepository.findById(clientId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Client", "id", Integer.toString(clientId)));
-            ClientDTO clientDTO = claimDTO.getClientDTO();
-            ClientMapper.toEntity(clientDTO,client);
-            claim.setClient(client);
-        }
-
             claim.setUpdatedAt(LocalDateTime.now());
             claimRepository.save(claim);
         }
