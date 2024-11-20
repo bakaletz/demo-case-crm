@@ -1,18 +1,16 @@
 package com.example.demo_case_crm.service;
 
-import com.example.demo_case_crm.entity.Document;
-
+import com.example.demo_case_crm.dto.DocumentDTO;
 import java.util.List;
-import java.util.Optional;
 
 public interface DocumentService {
-    List<Document> getAll();
+    List<DocumentDTO> getAll();
 
-    Document save(Document document);
+    void save(DocumentDTO documentDTO);
 
-    Optional<Document> getById(int id);
+    DocumentDTO getById(int id);
 
-    Document update(Document document);
+    void update(DocumentDTO documentDTO);
 
     void deleteById(int id);
 }

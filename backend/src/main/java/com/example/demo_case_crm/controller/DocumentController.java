@@ -1,65 +1,69 @@
 package com.example.demo_case_crm.controller;
 
-import com.example.demo_case_crm.entity.Document;
+import com.example.demo_case_crm.dto.DocumentDTO;
+import com.example.demo_case_crm.dto.ResponseDTO;
 import com.example.demo_case_crm.service.DocumentService;
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/documents")
+@AllArgsConstructor
+@Validated
 public class DocumentController {
 
     private DocumentService documentService;
 
-    public DocumentController(DocumentService documentService) {
-        this.documentService = documentService;
-    }
+
 
     @GetMapping
-    public List<Document> getAll(){
-        return documentService.getAll();
+    public ResponseEntity<List<DocumentDTO>> getAllDocuments(){
+        List<DocumentDTO> documentDTOS = documentService.getAll();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(documentDTOS);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Document> getDocumentById(@PathVariable int id) {
-        Optional<Document> document = documentService.getById(id);
-        return document.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<DocumentDTO> getDocumentById(@PathVariable int id) {
+        DocumentDTO documentDTO = documentService.getById(id);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(documentDTO);
     }
 
     @PostMapping
-    public ResponseEntity<Document> createDocument(@RequestBody Document document) {
-        Document createdDocument = documentService.save(document);
-
-        // Повертаємо новостворений документ разом зі статусом 201 Created
-        return new ResponseEntity<>(createdDocument, HttpStatus.CREATED);
+    public ResponseEntity<ResponseDTO> createDocument(@Valid @RequestBody DocumentDTO documentDTO) {
+        documentService.save(documentDTO);
+        return  ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(new ResponseDTO(HttpStatus.CREATED,"Document created"));
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<Document> updateDocument(@PathVariable int id, @RequestBody Document document) {
+    @PutMapping
+    public ResponseEntity<ResponseDTO> updateDocument(@Valid @RequestBody DocumentDTO documentDTO) {
+
+        documentService.update(documentDTO);
         // Переконуємося, що ID документа відповідає ID в шляху
-        if (document.getId() != id) {
-            return ResponseEntity.badRequest().build();
-        }
-        try {
-            Document updatedDocument = documentService.update(document);
-            return ResponseEntity.ok(updatedDocument);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.notFound().build();
-        }
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new ResponseDTO(HttpStatus.OK, "Document updated Successfully"));
+
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ResponseDTO> deleteDocument(@PathVariable int id) {
+
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new ResponseDTO(HttpStatus.OK, "Document deleted Successfully"));
+
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocument(@PathVariable int id) {
-        if (documentService.getById(id).isPresent()) {
-            documentService.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+
 
 }

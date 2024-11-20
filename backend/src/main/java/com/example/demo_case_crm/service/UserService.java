@@ -1,9 +1,11 @@
 package com.example.demo_case_crm.service;
 
-import com.example.demo_case_crm.entity.User;
-
+import com.example.demo_case_crm.dto.UserDTO;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAll();
+    List<UserDTO> getAll();
+
+    UserDTO getById(int id);
+
 }
