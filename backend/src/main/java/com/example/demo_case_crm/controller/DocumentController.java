@@ -58,6 +58,8 @@ public class DocumentController {
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseDTO> deleteDocument(@PathVariable int id) {
 
+        documentService.deleteById(id);
+
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(new ResponseDTO(HttpStatus.OK, "Document deleted Successfully"));

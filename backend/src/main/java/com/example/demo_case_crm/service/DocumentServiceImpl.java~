@@ -102,6 +102,7 @@ public class DocumentServiceImpl implements DocumentService{
                 () -> new ResourceNotFoundException("Document", "id", Integer.toString(id))
         );
         documentRepository.delete(document);
+
     }
 
 }
