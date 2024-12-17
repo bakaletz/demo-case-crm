@@ -1,38 +1,261 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(336deg, #3a3d5b, #1e202f);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 30px 0 15px;
+  color: #ffcc80;
+  text-align: left;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  border-radius: 40px;
+  padding: 0 20px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  font-size: 19px;
+  color: white;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff7043;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #d84315;
+}
+
+.logo-container {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
+.logo-img {
+  height: 70px;
+  width: 70px;
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.bars {
+  display: none;
+}
+
+@media (max-width: 1225px) {
+  .bars {
+    display: block;
+    font-size: 30px;
+    margin-right: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-list {
+    display: none;
   }
+
+  nav:hover .nav-list {
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+/* Content Sections */
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #f5f5f5;
+}
+
+.about-us,
+.office-gallery,
+.services,
+.team {
+  margin-bottom: 30px;
+}
+
+.gallery, .team-photo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img, .team-photo img {
+  border-radius: 15px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover, .team-photo img:hover {
+  transform: scale(1.05);
+}
+
+.services ul {
+  list-style: disc;
+  padding-left: 40px;
+  font-size: 18px;
+}
+
+.services ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #4b3737;
+  border-radius: 80px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.footer-text {
+  margin: 0;
+  color: #be8585;
+}
+
+/* Contacts and Links */
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  font-size: 35px;
+}
+
+.icon i {
+  color: #be8585;
+  transition: color 0.5s ease;
+}
+
+.fa-phone:hover {
+  color: rgba(189, 0, 88, 0.866);
+}
+
+.fa-envelope:hover {
+  color: rgb(215, 182, 33);
+}
+
+.fa-whatsapp:hover {
+  color: rgb(4, 176, 27);
+}
+
+.fa-telegram:hover {
+  color: rgb(22, 132, 211);
+}
+
+/* Team and Case Cards */
+.team-title {
+  font-size: 36px;
+  color: #ffcc80;
+  margin-bottom: 40px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+}
+
+.team-card img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.case-card {
+  background-color: rgba(75, 55, 55, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.case-card:hover {
+  transform: scale(1.02);
+}
+
+.case-card h3 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #ffab91;
+}
+
+.case-card p {
+  margin: 5px 0;
+  font-size: 18px;
 }
