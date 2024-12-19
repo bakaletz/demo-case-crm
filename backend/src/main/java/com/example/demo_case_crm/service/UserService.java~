@@ -8,5 +8,4 @@ public interface UserService {
 
     UserDTO getById(int id);
 
-    void update(UserDTO userDTO);
 }
