@@ -16,22 +16,22 @@ export const Navbar = () => {
        </div>
        <ul className="nav-list">
            <li>
-               <NavLink className="nav-btn" to='/cases'>Справи</NavLink>
+               <NavLink className="nav-btn" to='/cases'>Cases</NavLink>
            </li>
            <li>
-               <NavLink className="nav-btn" to="/users">Співробітники</NavLink>
+               <NavLink className="nav-btn" to="/users">Employees</NavLink>
            </li>
            <li>
-               <NavLink className="nav-btn" to="/clients">Клієнти</NavLink>
+               <NavLink className="nav-btn" to="/clients">Clients</NavLink>
            </li>
            <li>
-               <NavLink className="nav-btn" to="/contacts">Контакти</NavLink>
+               <NavLink className="nav-btn" to="/contacts">Contacts</NavLink>
            </li>
            <li>
                <NavLink className="nav-btn" to="/faq">FAQ</NavLink>
            </li>
            <li>
-               <a className="nav-btn" href="primary.html">Вихід</a>
+               <a className="nav-btn" href="primary.html">Exit</a>
            </li>
        </ul>
    </nav>

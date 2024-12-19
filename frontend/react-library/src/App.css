@@ -259,3 +259,68 @@ p {
   margin: 5px 0;
   font-size: 18px;
 }
+
+/* Контейнер форми */
+.add-form {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: "Arial", sans-serif;
+}
+
+/* Заголовок форми */
+.add-form h2 {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Поля вводу */
+.add-form input,
+.add-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Поля вводу (при фокусі) */
+.add-form input:focus,
+.add-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Кнопка підтвердження */
+.add-form button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Кнопка при наведенні */
+.add-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Помилки форми */
+.add-form .error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}

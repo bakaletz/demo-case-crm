@@ -1,15 +1,16 @@
-import { stat } from "fs";
+import UserModel from "./UserModel";
+import ClientModel from "./ClientModel";
 
 class ClaimModel {
    id: number;
    name: string;
    description?: string;
-   deadline?:number;
+   deadline?:string;
    status?:string;
-   user?:string;
-   client?:string;
+   user?:UserModel;
+   client?: ClientModel;
  
-   constructor(id:number, name:string,description:string,deadline:number,status:string, user:string, client:string){
+   constructor(id:number, name:string,description:string,deadline:string,status:string, user:UserModel, client:ClientModel){
     this.id=id;
     this.name=name;
     this.description=description;

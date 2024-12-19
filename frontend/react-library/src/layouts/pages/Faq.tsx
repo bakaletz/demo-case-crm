@@ -1,83 +1,80 @@
-
-
 export const Faq = () => {
   return (
     <div className="content">
-   
       <section className="title">
-        <h1>Внутрішні питання та відповіді для співробітників юридичної компанії</h1>
+        <h1>Internal Questions and Answers for Legal Firm Employees</h1>
       </section>
 
-      {/* Розділи FAQ */}
+      {/* FAQ Sections */}
       <section>
-        <h2>Які канали використовуються для внутрішньої комунікації?</h2>
+        <h2>What communication channels are used internally?</h2>
         <p>
-          Основний інструмент комунікації — корпоративний чат у Microsoft Teams. Офіційна документація 
-          та повідомлення від керівництва надсилаються через електронну пошту. Важливі оголошення також 
-          доступні на внутрішньому порталі в розділі новин.
+          The primary communication tool is the corporate chat in Microsoft Teams. Official documentation 
+          and announcements from management are sent via email. Important updates are also available on 
+          the internal portal in the news section.
         </p>
       </section>
 
       <section>
-        <h2>Як повідомити про юридичні або корпоративні проблеми?</h2>
-        <p>Якщо у вас є питання або ви помітили проблему:</p>
+        <h2>How to report legal or corporate issues?</h2>
+        <p>If you have questions or notice an issue:</p>
         <ol>
-          <li>Повідомте про це свого безпосереднього керівника.</li>
-          <li>Скористайтеся формою зворотного зв’язку на корпоративному порталі.</li>
+          <li>Inform your direct manager.</li>
+          <li>Use the feedback form on the corporate portal.</li>
           <li>
-            Для анонімного повідомлення використовуйте спеціальну форму на порталі внутрішньої безпеки.
+            For anonymous reporting, use the special form on the internal security portal.
           </li>
         </ol>
       </section>
 
       <section>
-        <h2>Чи можлива дистанційна робота?</h2>
+        <h2>Is remote work allowed?</h2>
         <p>
-          Компанія підтримує гібридний формат роботи. Юристи та інші співробітники можуть працювати 
-          віддалено за умови узгодження з керівником та HR-відділом. Необхідні документи повинні бути 
-          доступні в корпоративній системі збереження файлів.
+          The company supports a hybrid work format. Lawyers and other employees can work remotely 
+          with prior approval from their manager and the HR department. Required documents must be 
+          available in the corporate file storage system.
         </p>
       </section>
 
       <section>
-        <h2>Які умови щодо відпусток та лікарняних?</h2>
-        <p>Співробітникам надається 24 календарні дні оплачуваної відпустки. Також передбачені:</p>
+        <h2>What are the conditions for vacations and sick leave?</h2>
+        <p>Employees are entitled to 24 calendar days of paid vacation. Additional provisions include:</p>
         <ul>
-          <li>Лікарняний — за наявності медичної довідки</li>
-          <li>Декретна відпустка</li>
-          <li>Відпустка без збереження заробітної плати (до 15 днів на рік)</li>
+          <li>Sick leave — with a valid medical certificate</li>
+          <li>Maternity leave</li>
+          <li>Unpaid leave (up to 15 days per year)</li>
         </ul>
       </section>
 
       <section>
-        <h2>Як подати заявку на навчання або курси підвищення кваліфікації?</h2>
-        <p>Для професійного розвитку співробітників:</p>
+        <h2>How to apply for training or professional development courses?</h2>
+        <p>For employees' professional development:</p>
         <ol>
-          <li>Обговоріть можливість навчання з керівником.</li>
-          <li>Подайте заявку через розділ "Навчання та розвиток" на внутрішньому порталі.</li>
-          <li>Якщо навчання потребує фінансування, погодьте це з HR-відділом.</li>
+          <li>Discuss the possibility of training with your manager.</li>
+          <li>Submit an application through the "Training and Development" section on the internal portal.</li>
+          <li>If the training requires funding, coordinate it with the HR department.</li>
         </ol>
       </section>
 
       <section>
-        <h2>Як повідомити про конфлікт або етичну проблему?</h2>
-        <p>У разі виникнення конфліктних ситуацій:</p>
+        <h2>How to report a conflict or ethical issue?</h2>
+        <p>If conflict situations arise:</p>
         <ol>
-          <li>Спробуйте вирішити питання напряму з колегами.</li>
-          <li>Якщо це не допомогло, зверніться до керівника.</li>
+          <li>Try to resolve the issue directly with colleagues.</li>
+          <li>If this does not help, contact your manager.</li>
           <li>
-            Для серйозних конфліктів чи порушень етики скористайтеся анонімною скаргою на порталі.
+            For serious conflicts or ethical violations, submit an anonymous complaint on the portal.
           </li>
         </ol>
       </section>
 
       <section>
-        <h2>До кого звертатися з технічними питаннями?</h2>
-        <p>З питань обладнання або програмного забезпечення звертайтесь до IT-відділу:</p>
+        <h2>Whom to contact with technical issues?</h2>
+        <p>For equipment or software-related questions, contact the IT department:</p>
         <ul>
-          <li>Портал підтримки: розділ "IT-підтримка"</li>
-          <li>Чат Microsoft Teams: <b>#it-support</b></li>
-          <li>Електронна пошта: <a href="mailto:it.support@legalfirm.com">it.support@legalfirm.com</a></li>
+          <li>Support portal: "IT Support" section</li>
+          <li>Microsoft Teams chat: <b>#it-support</b></li>
+          <li>Email: <a href="mailto:it.support@legalfirm.com">it.support@legalfirm.com</a></li>
         </ul>
       </section>
     </div>
