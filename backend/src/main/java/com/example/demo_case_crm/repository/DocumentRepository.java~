@@ -12,5 +12,5 @@ public interface DocumentRepository extends JpaRepository<Document,Integer> {
 
     List<Document> findByClaimId(int claimId);
 
-    Optional<Document> findByClaimIdAndId(int claimId, int documentId);
+    Optional<Document> findDocumentByClaimIdAndDocumentId(int claimId, int documentId);
 }

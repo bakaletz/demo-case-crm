@@ -1,4 +1,4 @@
-package com.example.demo_case_crm.service;
+package com.example.demo_case_crm.service.implementation;
 
 import com.example.demo_case_crm.dto.ClaimDTO;
 import com.example.demo_case_crm.dto.ClientDTO;
@@ -13,6 +13,7 @@ import com.example.demo_case_crm.mapper.UserMapper;
 import com.example.demo_case_crm.repository.ClaimRepository;
 import com.example.demo_case_crm.repository.ClientRepository;
 import com.example.demo_case_crm.repository.UserRepository;
+import com.example.demo_case_crm.service.ClaimService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
@@ -92,6 +93,7 @@ public class ClaimServiceImpl implements ClaimService {
         }
 
         claim.setCreatedAt(LocalDateTime.now());
+        claim.setStatus("Open");
         claimRepository.save(claim);
     }
 

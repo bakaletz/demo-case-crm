@@ -85,6 +85,6 @@ public class ClaimController {
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDTO(HttpStatus.CREATED,"Document created"));
     }
-
+    
 
 }

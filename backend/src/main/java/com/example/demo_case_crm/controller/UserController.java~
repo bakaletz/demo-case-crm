@@ -1,5 +1,6 @@
 package com.example.demo_case_crm.controller;
 
+import com.example.demo_case_crm.dto.DocumentDTO;
 import com.example.demo_case_crm.dto.UserDTO;
 import com.example.demo_case_crm.service.UserService;
 import jakarta.validation.Valid;
@@ -7,8 +8,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/api/v1/users")
