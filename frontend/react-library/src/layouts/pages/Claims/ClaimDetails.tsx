@@ -173,7 +173,7 @@ export const ClaimDetails = () => {
   return (
     <div className="content">
       {claim && (
-        <section className="claim-details">
+        <section className="details">
           {isEditing ? (
             <div>
               <h2>Edit Claim</h2>

@@ -105,7 +105,7 @@ export const DocumentDetails = () => {
 
   return (
     <div className="content">
-      <section className="document-details">
+      <section className="details">
         {isEditing ? (
           <div>
             <h2>Edit Document</h2>

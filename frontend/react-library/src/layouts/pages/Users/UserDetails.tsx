@@ -102,7 +102,7 @@ export const UserDetails = () => {
 
   return (
     <div className="content">
-      <section className="user-details">
+      <section className="details">
         {isEditing ? (
           <div>
             <h2>Edit User</h2>

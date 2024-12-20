@@ -324,3 +324,122 @@ p {
   margin-bottom: 1rem;
   text-align: left;
 }
+
+.details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.details p {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.details label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.details input,
+.details textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.details textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.details textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.details button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details button:first-of-type {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.details button:first-of-type:hover {
+  background-color: #45a049;
+}
+
+.details button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.details button:last-of-type:hover {
+  background-color: #d32f2f;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.-details input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+
+.details .actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.details .actions button {
+  flex: 1;
+  max-width: 120px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #555;
+  appearance: none; /* Прибирає стандартний стиль браузера */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #555;
+}
+
+select:disabled {
+  background-color: #f9f9f9;
+  color: #aaa;
+  cursor: not-allowed;
+}
